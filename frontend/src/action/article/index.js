@@ -12,7 +12,6 @@ export const SET_ARTICLES = (articles) => {
     };
   };
 
-  
   export const UPDATE_ARTICLE = (article) => {
     return {
       type: 'UPDATE_ARTICLE',
