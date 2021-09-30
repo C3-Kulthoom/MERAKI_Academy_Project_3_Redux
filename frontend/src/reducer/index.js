@@ -1,8 +1,9 @@
 import { createStore, combineReducers } from "redux";
 
 import login from "./login/index";
+import articles from "./article";
+const reducers = combineReducers({ login1: login ,articles1:articles  });
 
-const reducers = combineReducers({ login1: login  });
 
 const store = createStore(reducers);
 
