@@ -33,15 +33,15 @@ const Login = () => {
     e.preventDefault();
 
 
-    // const saveToken = (token) => {////////////////
-    //   const user = jwt.decode(token);
-    //   if (user) {
-    //     setToken(token);
-    //     setIsLoggedIn(true);
-    //     setUserId(user.userId);
-    //     localStorage.setItem("token", token);
-    //   }
-    // };
+    const saveToken = (token) => {////////////////
+      const user = jwt.decode(state.token);
+      if (user) {
+        setToken(state.token);
+        setIsLoggedIn(true);
+        setUserId(user.userId);
+        localStorage.setItem("token", state.token);
+      }
+    };
 
 
     const validateToken = () => {
@@ -68,7 +68,9 @@ const Login = () => {
       if (res.data.success) {
         setMessage("");
         setIsLoggedIn(true);
-      dispatch(setToken(res.data.token) )
+      dispatch(setToken(res.data.token)
+       )
+       saveToken(state.token)
        
       
       } else throw Error;
