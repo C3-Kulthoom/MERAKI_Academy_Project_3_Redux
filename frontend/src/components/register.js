@@ -2,13 +2,13 @@ import React, { useContext, useState } from "react";
 
 import axios from "axios";
 
-import { AuthContext } from "./../context/auth";
+// import { AuthContext } from "./../context/auth";
 
 // =================================================================
 
 const Register = () => {
-  const { isLoggedIn } = useContext(AuthContext);
-
+  // const { isLoggedIn } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState(0);

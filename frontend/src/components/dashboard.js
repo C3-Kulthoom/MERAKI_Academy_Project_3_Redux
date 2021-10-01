@@ -6,8 +6,8 @@ import { AuthContext } from "../context/auth";
 //===============================================================
 
 const Dashboard = () => {
-  const { userId } = useContext(AuthContext);
-
+  // const { userId } = useContext(AuthContext);
+  const [userId, setUserId] = useState("");
   const [articles, setArticles] = useState("");
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState("");

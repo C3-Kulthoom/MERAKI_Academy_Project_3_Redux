@@ -1,15 +1,25 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-import { AuthContext } from "../context/auth";
+// import { AuthContext } from "../context/auth";
 
 //===============================================================
 
 const Navigation = () => {
-  const { logout, isLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
 
+  // const { logout, isLoggedIn } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState("");
   //===============================================================
-
+ const logout = () => {///////
+      setIsLoggedIn(false);
+      setUserId("");
+      localStorage.clear();
+      history.push("/login");
+    };
   return (
     <>
       {isLoggedIn ? (
